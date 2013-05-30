@@ -1,0 +1,35 @@
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand">Online products</a>
+			<%= link_to 'Back to the products list', products_path, :class => 'btn' %>
+		</div>
+	</div>
+</div>
+
+<div class='container'>
+	<fieldset>
+		<legend>Your cart</legend>
+	</fieldset>
+	<table class='table table-bordered table-striped'>
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th></th>
+			<th></th>
+
+		</tr>
+
+		<% @carts.each do |cart| %>
+			<tr>
+				<td><%= cart.name %></td>
+				<td><%= cart.price %></td>
+				<td><%= link_to 'Show', cart %></td>
+				<td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+
+<br />
+
