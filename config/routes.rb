@@ -1,9 +1,15 @@
 App1::Application.routes.draw do
-  resources :products
 
+  resources :carts 
+  resources :products 
+	
+  get "addToCart" => "products#addToCart"
 
+  
+  
   get "home/index"
-
+	
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

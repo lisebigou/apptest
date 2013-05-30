@@ -80,4 +80,16 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+	def addToCart
+		@a = Cart.new({"name"=>params[:name], "description"=>params[:description], "price"=>params[:price]})
+		@a.save
+	
+		redirect_to "/products"
+	end
+	
+	helper_method :addToCart
 end
+
+
+
